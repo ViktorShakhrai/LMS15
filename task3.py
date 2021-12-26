@@ -47,9 +47,9 @@
 def arg_rules(type_: type, max_length: int, contains: list):
     def decorator(func):
         def wrapper(name):
-            if type(type_) != str:
+            if type(name) != type_:
                 return False
-            if max_length < 15:
+            if len(name) > max_length:
                 return False
             for i in contains:
                 if i not in name:
